@@ -1,0 +1,17 @@
+.cache/
+.DS_Store
+.firebase/
+node_modules/
+dist/
+db/*.php
+src/tests/coverage
+functions/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
