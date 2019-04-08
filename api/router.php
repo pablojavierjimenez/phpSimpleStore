@@ -15,7 +15,7 @@ $notFound = '{"message":"endpoint not exist"}';
  */
 function router($route, $callback)
 {
-  echo $callback($route);
+  $callback($route);
     // global $routes;
     // $action = trim($route, '/');
     // $routes[$action] = $callback;

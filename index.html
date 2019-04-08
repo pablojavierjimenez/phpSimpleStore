@@ -1,0 +1,95 @@
+<?php
+/**
+ *
+ * @author  pablojavierjimenex@gmail.com
+ * @License   Copyleft 2019
+ * @since  Feb 4, 2019 5:08:20 PM
+ * @Internal  GNU/Linux Ubuntu 18.04
+ *
+ */
+?>
+<html>
+<head>
+	<title>Escoge tu archivo CSV
+</title>
+	<!--LINKS ESTILOS -->
+		<link rel='stylesheet' href='http://sirenasxmayor.com.ar/inex_css/inex-reset.css' />
+		<link rel='stylesheet' href='http://sirenasxmayor.com.ar/inex_css/default.css' />
+		<link rel='stylesheet' href='http://sirenasxmayor.com.ar/inex_css/default-b.css' />
+		<link rel='stylesheet' href='http://sirenasxmayor.com.ar/inex_css/formularios.css' />
+		<link rel='stylesheet' href='http://sirenasxmayor.com.ar/inex_css/mediaquery.css' />
+		<link rel="stylesheet" href="menu-4.css" type="text/css">
+		<style type="text/css">
+			body{letter-spacing: 1px;}
+			input{margin-top: .6em; display: inline-block; width: 40%;}
+			input[type="radio"]{width: 20%;}
+			input[type="submit"]{color:#c00;}
+			select{width: 98%;}
+			b{font-size: 1.8em;color:#e11;}
+			.label {font-size: 1.2em; display: inline-block; width: 40%;}
+			#page{
+				display: block;
+				margin:.5em auto;
+				}
+			.thumb {
+		    width: 98%;
+		    border: 1px solid #000;
+		    margin: 10px 5px 0 0;
+		  	}
+		  	#subir-csv{
+		  		padding: .5em;
+		  		font-size: 1.2em;
+		  	}
+		  	#subir-csv:hover{
+		  		color: #fff;
+		  	}
+			#form-editar{
+				display: none;
+			}
+			#form-buscar{
+				display: none;
+			}
+			#form-agregar{
+				display: none;
+			}
+		</style>
+	<!-- /*/*/*/*/*/*/ -->
+</head>
+<body>
+	<section class='page w80 bg-b' id="page" >
+	<div> <h1>Escoge un archivo CSV</h1>
+	<section class='ibox'>
+		<section id="form-subir-csv">
+			<form method="post" action="controller/print_tabla.php" enctype="multipart/form-data" id="testform">
+			<!-- <form method="post" action="subir_csv-v2.php" enctype="multipart/form-data" id="testform"> -->
+				<div class='label bg-r'>seleccisione el archivo a subir</div>
+				<input  type='file' value='' id='orden-prod' name='archivo' class='w50' />
+				<div class='ibox label w50 bg-r'>Elegir Familia</div>
+				<div class="ibox w50">
+					<select name="familia">
+						<option selected>--- familia la familia a subir ---</option>
+						<option>aros</option>
+						<option>anillos</option>
+						<option>broches</option>
+						<option>collares</option>
+						<option>pulseras</option>
+						<option>accesorios</option>
+						<option>carteras</option>
+						<option>textil</option>
+						<option>sombreros</option>
+						<option>aros-clasicos</option>
+						<option>anillos-clasicos</option>
+						<option>collares-clasicos</option>
+						<option>pulseras-clasicos</option>
+						<option>accesorios-clasicos</option>
+						<?php include("bd/".$titulo."-clasicos_data_from_csv.php"); ?>
+					</select>
+				</div>
+				<input name="boton" type="submit" id="boton" value="Subir">
+				</div>
+			</form>
+		</section>
+	</section>
+</div>
+</body>
+</html>
